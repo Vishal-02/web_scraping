@@ -5,6 +5,10 @@
 
 import scrapy
 
+class cover(scrapy.Item):
+    title = scrapy.Field()
+    file_urls = scrapy.Field()
+    files = scrapy.Field()
 
 class ExploreItem(scrapy.Item):
     # define the fields for your item here like:
