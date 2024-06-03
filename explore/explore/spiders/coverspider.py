@@ -1,9 +1,7 @@
-import scrapy.spiderloader
 from explore.items import cover
-import datetime
-import scrapy
+from scrapy import Spider
 
-class CoverSpider(scrapy.Spider):
+class CoverSpider(Spider):
     name = "pyimagesearch-cover-spider"
     start_urls = ["https://time.com/section/us/"]
 
