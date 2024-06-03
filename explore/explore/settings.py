@@ -26,7 +26,7 @@ ITEM_PIPELINES = {
 ROBOTSTXT_OBEY = True
 
 # Directory where the files should be stored
-FILES_STORE = "D:/Vishals Folder/Study/Code/Python/web_scraping/explore/explore/images"
+IMAGES_STORE = "D:/Vishals Folder/Study/Code/Python/web_scraping/explore/explore/images"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32

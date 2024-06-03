@@ -10,16 +10,16 @@ class CoverSpider(Spider):
         image_urls = response.xpath("//div[contains(@class, 'component image-new')]/div//img/@src").extract()
 
         # get all the titles for the corresponding images
-        divs_for_titles = response.xpath("//div[contains(@class, 'taxonomy-tout')]").getall()
+        divs_for_titles = response.xpath("//div[contains(@class, 'taxonomy-tout')]")
         titles = []
         
         for title in divs_for_titles:
-            text = title.xpath(".//div[contains(@class, 'text')]/h2/text()").extract()
+            text = title.xpath(".//div[contains(@class, 'text')]/h2/text()").get()
             titles.append(text)
 
         titles = [title.split("\n")[1].strip() for title in titles]
 
         # store in your data structure
         for i in range(len(image_urls)):
-            yield cover(title=titles[i], file_urls=image_urls[i])
+            yield cover(title=titles[i], image_urls=[image_urls[i]])
 
