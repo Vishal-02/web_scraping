@@ -15,7 +15,7 @@ NEWSPIDER_MODULE = "explore.spiders"
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "scrapy.contrib.pipeline.images.FilesPipeline": 1,
+    "scrapy.pipelines.images.ImagesPipeline": 1,
 #    "explore.pipelines.ExplorePipeline": 300,
 }
 
