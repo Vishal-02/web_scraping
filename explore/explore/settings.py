@@ -15,18 +15,18 @@ NEWSPIDER_MODULE = "explore.spiders"
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    "scrapy.pipelines.images.ImagesPipeline": 1,
+    "explore.pipelines.CustomPipeline": 1,
 #    "explore.pipelines.ExplorePipeline": 300,
 }
+
+# Directory where the files should be stored
+IMAGES_STORE = "D:/Vishals Folder/Study/Code/Python/web_scraping/explore/explore/images"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "explore (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
-
-# Directory where the files should be stored
-IMAGES_STORE = "D:/Vishals Folder/Study/Code/Python/web_scraping/explore/explore/images"
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
