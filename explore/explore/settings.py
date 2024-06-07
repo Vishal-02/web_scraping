@@ -7,6 +7,20 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
+from shutil import which
+
+SELENIUM_DRIVER_NAME = 'chrome'
+SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
+SELENIUM_DRIVER_ARGUMENTS = [
+    '--headless',
+    '--disable-javascript=false',
+    '--enable-cookies',
+    # '--disable-gpu',
+    '--disable-notifications',
+    '--disable-web-security',
+    '--incognito',
+]
+
 BOT_NAME = "explore"
 
 SPIDER_MODULES = ["explore.spiders"]
@@ -21,6 +35,13 @@ ITEM_PIPELINES = {
 
 # Directory where the files should be stored
 IMAGES_STORE = "D:/Vishals Folder/Study/Code/Python/web_scraping/explore/explore/images"
+
+# Enable or disable downloader middlewares
+# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
+DOWNLOADER_MIDDLEWARES = {
+    'scrapy_selenium.SeleniumMiddleware': 800,
+#    "explore.middlewares.ExploreDownloaderMiddleware": 543,
+}
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "explore (+http://www.yourdomain.com)"
@@ -55,12 +76,6 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
 #    "explore.middlewares.ExploreSpiderMiddleware": 543,
-#}
-
-# Enable or disable downloader middlewares
-# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    "explore.middlewares.ExploreDownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
